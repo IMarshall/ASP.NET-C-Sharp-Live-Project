@@ -65,6 +65,7 @@ public byte[] ConvertPhoto(HttpPostedFileBase postedFile)
 I called this method from the controller whenever an image was submitted through an HTTP POST request.
 
 `productionPhoto.PhotoFile = ConvertPhoto(postedFile);`
+
 #### Byte Array to Image
 ```
 public ActionResult ConvertBytes(int? id)
