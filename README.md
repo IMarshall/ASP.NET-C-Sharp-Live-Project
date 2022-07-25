@@ -17,6 +17,10 @@ Here's a short list of the different tasks that I completed throughout the live 
 - [x] Restrict access to CRUD pages to users with the Admin role. Anonymous users should only be able to view the index page.
 ### Demo Video
 
+
+https://user-images.githubusercontent.com/96323360/180870755-1e4836fd-ce38-4163-b3bf-abb777fe6026.mp4
+
+
 ### Converting Images and Byte Arrays
 
 ### Using TempData to Fix Edit Page
