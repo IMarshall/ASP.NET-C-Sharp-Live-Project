@@ -82,7 +82,7 @@ public ActionResult ConvertBytes(int? id)
     return File(productionPhoto.PhotoFile, "image/png");
 }
 ```
-I called this method from the view whenever I needed to display a photo.
+I called this method from the view whenever I needed to display a photo. It gets the id of the photo from the controller and uses it to retrieve the byte array as an image.
 ```
 string source = Url.Action("ConvertBytes", "ProductionPhotos", new { id = item.ProductionPhotoId });
 <img class="card-img-top" src="@source" alt="@item.Description" style="width: 100%; height: 15vw; object-fit: cover;">
