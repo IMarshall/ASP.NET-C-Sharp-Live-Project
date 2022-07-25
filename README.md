@@ -20,7 +20,7 @@ Here's a short list of the different tasks that I completed throughout the live 
 https://user-images.githubusercontent.com/96323360/180877079-7101eb1f-a0f1-4e46-98fd-a577847c72c1.mp4
 
 ### Restricting Access to Admin Account
-I was asked to restrict access to CRUD functionality to only users who had an admin role. I did this by adding the `[AllowAnonymous]` or `[Authorize]` to each method. I also wrote a short method in my startup.cs file to create an "Admin" role and assign it to a default admin user if one didn't already exist. This method was called from the Configuration method so that it would run on startup.
+I was asked to restrict access to CRUD functionality to only users who had an admin role. I did this by adding the `[AllowAnonymous]` or `[Authorize]` attribute to each method. I also wrote a short method in my startup.cs file to create an "Admin" role and assign it to a default admin user if one didn't already exist. This method was called from the Configuration method so that it would run on startup.
 ```
 private void CreateRoles()
 {
