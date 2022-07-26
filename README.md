@@ -7,7 +7,7 @@ Here's a short list of the different tasks that I completed throughout the live 
 - [x] Create Entity Model for Production Photos class.
 - [x] Scaffold CRUD pages and add shared .cshtml layout to each.
 - [x] Link the Productions model to the Production Photos model using a one-to-many fully defined relationship. Photos should be assigned to a Production when they are created.
-- [x] Add image preview to create and edit pages that will display an uploaded image before the form is submitted.
+- [x] [Add image preview to create and edit pages that will display an uploaded image before the form is submitted.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#image-preview-before-submission-to-database)
 - [x] [Create a method to convert uploaded images to a byte array](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#image-to-byte-array) and save them in the database. Call the method from the controller when formdata is posted from create and edit pages.
 - [x] [Create a method to convert byte arrays from the database to images to be shown on the page.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#byte-array-to-image) Call the method using Razor in the view.
 - [x] [Fix edit page bug so that a new image doesn't have to be uploaded every time.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#using-tempdata-to-fix-edit-page)
