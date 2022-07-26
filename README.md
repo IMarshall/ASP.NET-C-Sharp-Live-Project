@@ -8,17 +8,41 @@ Here's a short list of the different tasks that I completed throughout the live 
 - [x] Scaffold CRUD pages and add shared .cshtml layout to each.
 - [x] Link the Productions model to the Production Photos model using a one-to-many fully defined relationship. Photos should be assigned to a Production when they are created.
 - [x] Add image preview to create and edit pages that will display an uploaded image before the form is submitted.
-- [x] Create a method to convert uploaded images to a byte array and save them in the database. Call the method from the controller when formdata is posted from create and edit pages.
-- [x] Create a method to convert byte arrays from the database to images to be shown on the page. Call the method using Razor in the view.
-- [x] Fix edit page bug so that a new image doesn't have to be uploaded every time.
+- [x] [Create a method to convert uploaded images to a byte array](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#image-to-byte-array) and save them in the database. Call the method from the controller when formdata is posted from create and edit pages.
+- [x] [Create a method to convert byte arrays from the database to images to be shown on the page.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#byte-array-to-image) Call the method using Razor in the view.
+- [x] [Fix edit page bug so that a new image doesn't have to be uploaded every time.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#using-tempdata-to-fix-edit-page)
 - [x] Style the create and edit pages using Bootstrap and custom CSS/cshtml. Pages should be responsive and change from two columns to one column when screen size is small.
 - [x] Style the index page so that each photo and it's properties are represented by a Bootstrap card. Organize photos by the production that they belong to.
 - [x] Add a search bar and paging to the index page. Search terms should carry over from page to page until cleared from the search bar.
-- [x] Restrict access to CRUD pages to users with the Admin role. Anonymous users should only be able to view the index page.
+- [x] [Restrict access to CRUD pages to users with the Admin role.](https://github.com/IMarshall/ASP.NET-C-Sharp-Live-Project/blob/main/README.md#restricting-access-to-admin-account) Anonymous users should only be able to view the index page.
 ### Demo Video
 
 https://user-images.githubusercontent.com/96323360/180877079-7101eb1f-a0f1-4e46-98fd-a577847c72c1.mp4
 
+### Image Preview Before Submission to Database
+On the create and edit pages, the users can upload a photo to be stored in the database. I wanted to allow them to preview the photo before it was actually submitted so I made a separate image element which would have it's display attribute set to hidden until a photo was uploaded. I set the onchange attribute of the file input element to trigger a JavaScript function. 
+
+`<input id="imgInput" type="file" accept="image/*" name="postedFile" onchange="showPreview()" />`
+
+That function checks to make sure a file was uploaded, uses URL.createObjectURL to create a URL for that file, sets the source of my separate image element to that URL, and finally sets the display attribute of the image element to block, so that it shows on the page.
+
+```
+function showPreview() {
+    imgInput = document.getElementById("imgInput");
+    imgPreview = document.getElementById("imgPreview");
+    imgContainer = document.getElementById("imgContainer");
+
+    const [file] = imgInput.files;
+    if (file) {
+        imgPreview.src = URL.createObjectURL(file)
+    }
+
+    imgPreview.style.display = "block";
+    imgContainer.style.border = "2px solid var(--main-color)";
+    imgContainer.style.outline = "2px solid var(--secondary-color)";
+    imgPreview.alt = "Your photo"
+}
+```
 ### Converting Images and Byte Arrays
 In order to store the photos in the database, I needed to be able to convert them to a byte array, and then convert them back to an image each time they needed to be displayed in the view. I didn't have any experience with this so this was a great learning opportunity. I wrote a few short methods to do the conversions and called them whenever needed.
 #### Image to Byte Array
