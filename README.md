@@ -1,4 +1,4 @@
-# ASP.NET-C-Sharp Website
+# ASP.NET/C# Website
 A repository to document what I learned and did during a 2-week sprint working on ASP.NET MVC Entity Framework Web App.
 ## Introduction
 I participated in a 2-week code sprint during which I was put in charge of creating a section of a large website built using ASP.NET MVC and Entity Framework. The project was an interactive website for managing the content and productions for a theater/acting company. I was tasked with building a section of the website where a website administrator could perform basic CRUD operations on photos for each production. I designed both the front-end and back-end for each page. The front end was developed using Razor, Bootstrap, HTML, CSS, and JavaScript. The back-end was developed using .NET MVC, Entity Framework, and C#. During the sprint, I worked with a team of other developers using Agile Methodologies to manage the project as a whole. DevOps for the project was done through Azure DevOps. Git was used for version control.
